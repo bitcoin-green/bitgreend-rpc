@@ -1,16 +1,16 @@
-# dashd-rpc
+# bitgreend-rpc
 
-[![Build Status](https://img.shields.io/travis/dashevo/dashd-rpc.svg?branch=master)](https://travis-ci.org/dashevo/dashd-rpc)
-[![NPM Package](https://img.shields.io/npm/v/@dashevo/dashd-rpc.svg)](https://www.npmjs.org/package/@dashevo/dashd-rpc)
+[![Build Status](https://img.shields.io/travis/bitgreend-rpc.svg?branch=master)](https://travis-ci.org/bitgreend-rpc)
+[![NPM Package](https://img.shields.io/npm/v/bitgreend-rpc.svg)](https://www.npmjs.org/package/bitgreend-rpc)
 
 > Dash Client Library to connect to Dash Core (dashd) via RPC
 
 ## Install
 
-dashd-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
+bitgreend-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
 
 ```bash
-npm install @dashevo/dashd-rpc
+npm install bitgreend-rpc
 ```
 
 ## Usage
@@ -23,12 +23,12 @@ Config parameters :
 	- user : (string - optional) - (default: 'user') - Set the user credential.
 	- pass : (string - optional) - (default: 'pass') - Set the password credential.
 	- host : (string - optional) - (default: '127.0.0.1') - The host you want to connect with.
-	- port : (integer - optional) - (default: 9998) - Set the port on which perform the RPC command.
+	- port : (integer - optional) - (default: 9332) - Set the port on which perform the RPC command.
 
 Promise vs callback based
 
-  - `require('@dashevo/dashd-rpc/promise')` to have promises returned
-  - `require('@dashevo/dashd-rpc')` to have callback functions returned
+  - `require('bitgreend-rpc/promise')` to have promises returned
+  - `require('bitgreend-rpc')` to have callback functions returned
 	
 ### Examples
 
@@ -40,14 +40,14 @@ var config = {
     user: 'dash',
     pass: 'local321',
     host: '127.0.0.1',
-    port: 19998
+    port: 9332
 };
 ```
 
 Promise based:
 
 ```javascript
-var RpcClient = require('@dashevo/dashd-rpc/promise');
+var RpcClient = require('bitgreend-rpc/promise');
 var rpc = new RpcClient(config);
 
 rpc.getRawMemPool()
@@ -68,8 +68,8 @@ Callback based (legacy):
 
 ```javascript
 var run = function() {
-  var bitcore = require('@dashevo/dashcore-lib');
-  var RpcClient = require('@dashevo/dashd-rpc');
+  var bitcore = require('bitgreen-lib');
+  var RpcClient = require('bitgreend-rpc');
   var rpc = new RpcClient(config);
 
   var txids = [];
@@ -115,13 +115,13 @@ var run = function() {
 You can dynamically access to the help of each method by doing
 
 ```
-const RpcClient = require('@dashevo/dashd-rpc');
+const RpcClient = require('bitgreend-rpc');
 var client = new RPCclient({
     protocol:'http',
-    user: 'dash',
+    user: 'bitgreen',
     pass: 'local321', 
     host: '127.0.0.1', 
-    port: 19998
+    port: 9332
 });
 
 var cb = function (err, data) {
@@ -137,7 +137,7 @@ client.help('getinfo',cb);
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/dashevo/dash-std-template/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/dash-std-template/issues/new) or submit PRs.
 
 ## License
 
